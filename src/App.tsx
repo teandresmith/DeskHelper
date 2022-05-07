@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Stack } from '@mui/material'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import TicketPage from './components/screens/TicketPage'
+import SideNavbar from './components/SideNavbar'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Stack direction='row' sx={{ width: '100%', height: '100%' }}>
+      <SideNavbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<TicketPage />} />
+        </Routes>
+      </BrowserRouter>
+    </Stack>
+  )
 }
 
-export default App;
+export default App
