@@ -1,6 +1,6 @@
 # DeskHelper
 
-DeskHelper is a ticketing system that provides users to create new tickets regarding certain issues they may be having. Additionally, it serves as a platform for support members to be able to handle issues.
+DeskHelper is a ticketing system platform that provides a place for users to input issues and for support members to solve them.
 
 Below is a quick mock up of the Tickets page.
 
