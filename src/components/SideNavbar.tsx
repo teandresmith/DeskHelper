@@ -18,7 +18,7 @@ import {
   Avatar,
 } from '@mui/material'
 
-type SideNavbarProps = {}
+// type SideNavbarProps = {}
 
 const SideNavbar = () => {
   const [selected, setSelected] = React.useState('Tickets')
@@ -50,7 +50,7 @@ const SideNavbar = () => {
           disablePadding
           sx={{
             '& .MuiButtonBase-root.MuiListItemButton-root.Mui-selected': {
-              backgroundColor: 'orange',
+              backgroundColor: '#E09D21',
             },
           }}
         >
@@ -87,7 +87,7 @@ const SideNavbar = () => {
                 justifyContent: 'center',
               }}
             >
-              <Badge badgeContent={2} color='secondary'>
+              <Badge badgeContent={2} color='primary'>
                 <LocalActivity sx={{ color: 'white' }} />
               </Badge>
             </ListItemIcon>
@@ -120,7 +120,7 @@ const SideNavbar = () => {
             disablePadding
             sx={{
               '& .MuiButtonBase-root.MuiListItemButton-root.Mui-selected': {
-                backgroundColor: 'orange',
+                backgroundColor: '#E09D21',
               },
             }}
           >

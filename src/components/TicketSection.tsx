@@ -4,17 +4,17 @@ import {
   Chip,
   Divider,
   List,
-  ListItem,
   ListItemText,
   ListItemButton,
   Stack,
   Typography,
 } from '@mui/material'
 import Searchbar from './Searchbar'
+import { ticketSectionData } from '../assets/data/data'
 
-type Props = {}
+type TicketSectionProps = {}
 
-const TicketSection = (props: Props) => {
+const TicketSection = (props: TicketSectionProps) => {
   return (
     <Box
       component='div'
@@ -56,49 +56,48 @@ const TicketSection = (props: Props) => {
         </Box>
 
         <List>
-          <ListItemButton disableGutters>
-            <Stack
-              direction='row'
-              justifyContent='space-between'
-              sx={{ width: '100%' }}
-            >
-              <ListItemText primary='Hello' />
-              <Chip label='5' />
-            </Stack>
-          </ListItemButton>
-          <ListItem disableGutters secondaryAction={<Chip label='5' />}>
-            <ListItemText primary='Unassigned Tickets' />
-          </ListItem>
-          <ListItem disableGutters secondaryAction={<Chip label='3' />}>
-            <ListItemText primary='My Open Tickets' />
-          </ListItem>
+          {ticketSectionData.ticketCategories['firstSection'].map((value) => (
+            <ListItemButton disableGutters key={value}>
+              <Stack
+                direction='row'
+                justifyContent='space-between'
+                sx={{ width: '100%' }}
+              >
+                <ListItemText primary={value} />
+                <Chip label='5' />
+              </Stack>
+            </ListItemButton>
+          ))}
         </List>
         <Divider />
         <List>
-          <ListItem disableGutters secondaryAction={<Chip label='3' />}>
-            <ListItemText primary='Open' />
-          </ListItem>
-          <ListItem disableGutters secondaryAction={<Chip label='3' />}>
-            <ListItemText primary='Pending' />
-          </ListItem>
-          <ListItem disableGutters secondaryAction={<Chip label='3' />}>
-            <ListItemText primary='On Hold' />
-          </ListItem>
-          <ListItem disableGutters secondaryAction={<Chip label='3' />}>
-            <ListItemText primary='Solved' />
-          </ListItem>
-          <ListItem disableGutters secondaryAction={<Chip label='3' />}>
-            <ListItemText primary='Closed' />
-          </ListItem>
+          {ticketSectionData.ticketCategories['secondSection'].map((value) => (
+            <ListItemButton disableGutters key={value}>
+              <Stack
+                direction='row'
+                justifyContent='space-between'
+                sx={{ width: '100%' }}
+              >
+                <ListItemText primary={value} />
+                <Chip label='5' />
+              </Stack>
+            </ListItemButton>
+          ))}
         </List>
         <Divider />
         <List>
-          <ListItem disableGutters secondaryAction={<Chip label='3' />}>
-            <ListItemText primary='Spam' />
-          </ListItem>
-          <ListItem disableGutters secondaryAction={<Chip label='3' />}>
-            <ListItemText primary='Trash' />
-          </ListItem>
+          {ticketSectionData.ticketCategories['thirdSection'].map((value) => (
+            <ListItemButton disableGutters key={value}>
+              <Stack
+                direction='row'
+                justifyContent='space-between'
+                sx={{ width: '100%' }}
+              >
+                <ListItemText primary={value} />
+                <Chip label='5' />
+              </Stack>
+            </ListItemButton>
+          ))}
         </List>
       </Box>
     </Box>
