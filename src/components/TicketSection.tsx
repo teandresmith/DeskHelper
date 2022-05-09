@@ -11,10 +11,18 @@ import {
 } from '@mui/material'
 import Searchbar from './Searchbar'
 import { ticketSectionData } from '../assets/data/data'
+import { setTicketCategory } from '../redux/states/ticketPage'
+import { useAppDispatch } from '../hooks/reduxHooks'
 
 type TicketSectionProps = {}
 
 const TicketSection = (props: TicketSectionProps) => {
+  const dispatch = useAppDispatch()
+
+  const handleCategoryClick = (event: any, value: string) => {
+    dispatch(setTicketCategory(value))
+  }
+
   return (
     <Box
       component='div'
@@ -52,12 +60,22 @@ const TicketSection = (props: TicketSectionProps) => {
 
       <Box component='div' sx={{ p: 4 }}>
         <Box component='div' sx={{ pb: 2 }}>
-          <Typography variant='h6'>All Tickets</Typography>
+          <Typography
+            onClick={(e) => handleCategoryClick(e, 'All Tickets')}
+            variant='h6'
+            sx={{ ':hover': { cursor: 'pointer' } }}
+          >
+            All Tickets
+          </Typography>
         </Box>
 
         <List>
           {ticketSectionData.ticketCategories['firstSection'].map((value) => (
-            <ListItemButton disableGutters key={value}>
+            <ListItemButton
+              onClick={(e) => handleCategoryClick(e, value)}
+              disableGutters
+              key={value}
+            >
               <Stack
                 direction='row'
                 justifyContent='space-between'
@@ -72,7 +90,11 @@ const TicketSection = (props: TicketSectionProps) => {
         <Divider />
         <List>
           {ticketSectionData.ticketCategories['secondSection'].map((value) => (
-            <ListItemButton disableGutters key={value}>
+            <ListItemButton
+              onClick={(e) => handleCategoryClick(e, value)}
+              disableGutters
+              key={value}
+            >
               <Stack
                 direction='row'
                 justifyContent='space-between'
@@ -87,7 +109,11 @@ const TicketSection = (props: TicketSectionProps) => {
         <Divider />
         <List>
           {ticketSectionData.ticketCategories['thirdSection'].map((value) => (
-            <ListItemButton disableGutters key={value}>
+            <ListItemButton
+              onClick={(e) => handleCategoryClick(e, value)}
+              disableGutters
+              key={value}
+            >
               <Stack
                 direction='row'
                 justifyContent='space-between'

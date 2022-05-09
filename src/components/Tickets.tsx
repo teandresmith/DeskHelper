@@ -28,8 +28,8 @@ const Tickets = (props: Props) => {
           </Typography>
         </Grid>
       </Grid>
-      {[1, 2, 3, 4].map(() => (
-        <Ticket />
+      {[1, 2, 3, 4].map((value) => (
+        <Ticket key={value} />
       ))}
     </>
   )
